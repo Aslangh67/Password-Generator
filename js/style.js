@@ -12,36 +12,97 @@ function generatePassword() {
     var num = '0123456789'
     var spec = '!@#$%^&*()_+~`|}{[]\:;?><,./-='
     var lenght = prompt("please select number of character between 8-128!")
+
+
     while (lenght < 8 || lenght > 128)
         lenght = prompt("please select number of character between 8-128 dumbass!!")
+    console.log(lenght);
+
 
     var special = confirm("Would you like special characters?")
     var numeric = confirm("Would you like numeric characters?")
     var lowerCase = confirm("Would you like lowercase  characters?")
     var upperCase = confirm("Would you like uppercase characters?")
     while (special === false && numeric === false && lowerCase === false && upperCase === false)
-        if (special === false && numeric === false && lowerCase === false && upperCase === false) {
-            alert("please chose at least one style of character!!!!!!!!!")
-            var special = confirm("Would you like special characters?")
-            var numeric = confirm("Would you like numeric characters?")
-            var lowerCase = confirm("Would you like lowercase  characters?")
-            var upperCase = confirm("Would you like uppercase characters?")
+    // if (special === false && numeric === false && lowerCase === false && upperCase === false)
+    {
+        alert("please chose at least one character!!!!!!!!!")
+        var special = confirm("Would you like special characters?")
+        var numeric = confirm("Would you like numeric characters?")
+        var lowerCase = confirm("Would you like lowercase  characters?")
+        var upperCase = confirm("Would you like uppercase characters?")
+
+    }
+    // TODO: create a variable to collect the right inputs in
+    var selection = [];
+    // TODO: create a function to push the selected variables to the right variable
+    if (special) {
+        for (let i = 0; i < spec.length; i++) {
+            selection.push(spec[i])
         }
-            // TODO: create a variable to collect the right inputs in
-            var selection = [];
-            // TODO: create a function to push the selected variables to the right variable
-            if (special||numeric||lowerCase||upperCase){
-                selection.push(numeric||special||lowerCase||upperCase)
-            }
-            else{
-                console.log("nope")
-            }
-  
     }
 
-            // TODO: creat a loop to randomly select the number of variables
-            // TODO: insert the output to the right field
+    if (numeric) {
+        for (let i = 0; i < num.length; i++) {
+            selection.push(num[i])
+
+
+        }
+    }
+    if (lowerCase) {
+        for (let i = 0; i < string.length; i++) {
+            selection.push(string[i])
+
+
+        }
+    }
+    if (upperCase) {
+        for (let i = 0; i < upString.length; i++) {
+            selection.push(upString[i])
+        }
+        console.log(selection);
+        var result = []
+
+    }
+
+            while (result.valueOf() < (lenght.valueOf() - 1)) {
+            var nums = Math.floor(Math.random() * 92);
+            for (j=0;j<lenght.valueOf();j++){
+                result.push(nums[j])
+            }
+              
+
+          }
+          
+    // TODO: creat a loop to randomly select the number of variables
+
+    // TODO: while var1 != var2 do the loop, each time doing the loop add one item to var 3
+
     
+
+
+
+
+
+
+
+
+
+    console.log(result);
+}
+
+
+
+
+
+
+
+
+
+
+
+// TODO: insert the output to the right field
+
 // Write password to the #password input
 function writePassword() {
     var password = generatePassword();

@@ -12,6 +12,7 @@ function generatePassword() {
     var num = '0123456789'
     var spec = '!@#$%^&*()_+~`|}{[]\:;?><,./-='
     var lenght = prompt("please select number of character between 8-128!")
+    var result = []
 
 
     while (lenght < 8 || lenght > 128)
@@ -61,34 +62,25 @@ function generatePassword() {
             selection.push(upString[i])
         }
         console.log(selection);
-        var result = []
+        
 
     }
 
-            while (result.valueOf() < (lenght.valueOf() - 1)) {
-            var nums = Math.floor(Math.random() * 92);
-            for (j=0;j<lenght.valueOf();j++){
-                result.push(nums[j])
-            }
-              
 
-          }
-          
+
+    for (i = 0; i < lenght.valueOf(); i++) {
+        result.push(selection[Math.floor(Math.random() * selection.length)])
+    }
+
+
+
+
+
     // TODO: creat a loop to randomly select the number of variables
 
     // TODO: while var1 != var2 do the loop, each time doing the loop add one item to var 3
 
-    
 
-
-
-
-
-
-
-
-
-    console.log(result);
 }
 
 

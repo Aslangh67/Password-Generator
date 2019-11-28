@@ -23,7 +23,7 @@ function generatePassword() {
     var lowerCase = confirm("Would you like lowercase  characters?")
     var upperCase = confirm("Would you like uppercase characters?")
     while (special === false && numeric === false && lowerCase === false && upperCase === false)
-    // if (special === false && numeric === false && lowerCase === false && upperCase === false)
+
     {
         alert("please chose at least one character!!!!!!!!!")
         var special = confirm("Would you like special characters?")
@@ -32,9 +32,9 @@ function generatePassword() {
         var upperCase = confirm("Would you like uppercase characters?")
 
     }
-    // TODO: create a variable to collect the right inputs in
+   
     var selection = [];
-    // TODO: create a function to push the selected variables to the right variable
+    
     if (special) {
         for (let i = 0; i < spec.length; i++) {
             selection.push(spec[i])
@@ -79,10 +79,13 @@ function writePassword() {
 }
 
 function copyToClipboard() {
-    // BONUS 
-}
-
+    var copyText = document.querySelector("#password");
+    copyText.select();
+    document.execCommand("copy");
+  }
+  
 // Add event listener to generate button
 generateBtn.addEventListener("click", writePassword);
 
 // BONUS EVENT LISTENER
+copyBtn.addEventListener("click", copyToClipboard);

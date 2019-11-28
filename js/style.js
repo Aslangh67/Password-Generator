@@ -14,11 +14,9 @@ function generatePassword() {
     var lenght = prompt("please select number of character between 8-128!")
     var result = []
 
-
     while (lenght < 8 || lenght > 128)
         lenght = prompt("please select number of character between 8-128 dumbass!!")
     console.log(lenght);
-
 
     var special = confirm("Would you like special characters?")
     var numeric = confirm("Would you like numeric characters?")
@@ -46,15 +44,11 @@ function generatePassword() {
     if (numeric) {
         for (let i = 0; i < num.length; i++) {
             selection.push(num[i])
-
-
         }
     }
     if (lowerCase) {
         for (let i = 0; i < string.length; i++) {
             selection.push(string[i])
-
-
         }
     }
     if (upperCase) {
@@ -62,40 +56,18 @@ function generatePassword() {
             selection.push(upString[i])
         }
         console.log(selection);
-        
-
     }
-
-
 
     for (i = 0; i < lenght.valueOf(); i++) {
         result.push(selection[Math.floor(Math.random() * selection.length)])
     }
+    var outPut= result.join("")
+console.log(outPut);
+return(outPut)
 
-
-
-
-
-    // TODO: creat a loop to randomly select the number of variables
-
-    // TODO: while var1 != var2 do the loop, each time doing the loop add one item to var 3
-
-
+   
 }
 
-
-
-
-
-
-
-
-
-
-
-// TODO: insert the output to the right field
-
-// Write password to the #password input
 function writePassword() {
     var password = generatePassword();
     var passwordText = document.querySelector("#password");

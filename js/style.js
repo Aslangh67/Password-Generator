@@ -11,30 +11,29 @@ function generatePassword() {
     var upString = "ABCDEFGHIGKLMONPQRSTUVWXYZ"
     var num = '0123456789'
     var spec = '!@#$%^&*()_+~`|}{[]\:;?><,./-='
-    var lenght = prompt("please select number of character between 8-128!")
+    var lenght =  prompt("please select number of characters between 8-128!")
     var result = []
 
-    while (lenght < 8 || lenght > 128)
-        lenght = prompt("please select number of character between 8-128 dumbass!!")
-    console.log(lenght);
+    while (lenght < 8 || lenght > 128) {
+        lenght = prompt("please select number of characters between 8-128!")
+        console.log(lenght)
+    };
 
     var special = confirm("Would you like special characters?")
     var numeric = confirm("Would you like numeric characters?")
     var lowerCase = confirm("Would you like lowercase  characters?")
     var upperCase = confirm("Would you like uppercase characters?")
-    while (special === false && numeric === false && lowerCase === false && upperCase === false)
-
-    {
-        alert("please chose at least one character!!!!!!!!!")
+    while (special === false && numeric === false && lowerCase === false && upperCase === false) {
+        alert("please choose at least one type of character!")
         var special = confirm("Would you like special characters?")
         var numeric = confirm("Would you like numeric characters?")
         var lowerCase = confirm("Would you like lowercase  characters?")
         var upperCase = confirm("Would you like uppercase characters?")
 
     }
-   
+
     var selection = [];
-    
+
     if (special) {
         for (let i = 0; i < spec.length; i++) {
             selection.push(spec[i])
@@ -61,11 +60,11 @@ function generatePassword() {
     for (i = 0; i < lenght.valueOf(); i++) {
         result.push(selection[Math.floor(Math.random() * selection.length)])
     }
-    var outPut= result.join("")
-console.log(outPut);
-return(outPut)
+    var outPut = result.join("")
+    console.log(outPut);
+    return (outPut)
 
-   
+
 }
 
 function writePassword() {
@@ -82,8 +81,9 @@ function copyToClipboard() {
     var copyText = document.querySelector("#password");
     copyText.select();
     document.execCommand("copy");
-  }
-  
+    alert("Ye did copy thy password")
+}
+
 // Add event listener to generate button
 generateBtn.addEventListener("click", writePassword);
 
